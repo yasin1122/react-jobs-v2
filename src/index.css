@@ -1,1 +1,7 @@
 @import 'tailwindcss';
+
+/* Custom theme declarations using CSS variables */
+@theme {
+  --font-family-sans: Roboto, sans-serif;
+  --grid-template-columns-70-30: 70% 28%;
+}
