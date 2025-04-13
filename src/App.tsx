@@ -7,6 +7,7 @@ import { RouterProvider } from 'react-router/dom'
 import HomePage from './pages/HomePage'
 import MainLayout from './layouts/MainLayout'
 import JobsPage from './pages/JobsPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,10 @@ const router = createBrowserRouter(
       <Route
         path='/jobs'
         element={<JobsPage />}
+      />
+      <Route
+        path='*'
+        element={<NotFoundPage />}
       />
     </Route>
   )
