@@ -1,6 +1,5 @@
 import jobs from '../jobs.json'
-
-console.log(jobs)
+import JobListing from './JobListing'
 
 const JobListings = () => {
   return (
@@ -11,9 +10,10 @@ const JobListings = () => {
         </h2>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
           {jobs.map(job => (
-            <div className='bg-white'>
-              <div className='p-4'></div>
-            </div>
+            <JobListing
+              key={job.id}
+              job={job}
+            />
           ))}
         </div>
       </div>
