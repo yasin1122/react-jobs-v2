@@ -26,6 +26,11 @@ const JobListing = ({ job }: { job: Job }) => {
           <h3 className='text-xl font-bold'>{job.title}</h3>
         </div>
         <div className='mb-5'>{description}</div>
+        <button
+          onClick={() => setFullDescription(prev => !prev)}
+          className='text-indigo-500 mb-5 hover:text-indigo-600'>
+          {showFullDescription ? 'Less' : 'More'}
+        </button>
         <h3 className='text-indigo-500 mb-2'>{job.salary}</h3>
         <div className='border border-gray-100 mb-5'></div>
         <div className='flex flex-col lg:flex-row justify-between mb-4'>
