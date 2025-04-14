@@ -2,7 +2,24 @@ import { useState } from 'react'
 import { useParams, useLoaderData, useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 
-const EditJobPage = ({ updateJobSubmit }) => {
+interface EditJobPageProps {
+  updateJobSubmit: (updatedJob: {
+    id: string | undefined
+    title: string
+    type: string
+    location: string
+    description: string
+    salary: string
+    company: {
+      name: string
+      description: string
+      contactEmail: string
+      contactPhone: string
+    }
+  }) => void
+}
+
+const EditJobPage: React.FC<EditJobPageProps> = ({ updateJobSubmit }) => {
   const job = useLoaderData()
   const [title, setTitle] = useState(job.title)
   const [type, setType] = useState(job.type)
