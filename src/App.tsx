@@ -14,7 +14,15 @@ import EditJobPage from './pages/EditJobPage'
 
 const App = () => {
   // Add New Job
-  const addJob = async newJob => {
+  interface Job {
+    id?: string
+    title: string
+    description: string
+    company: string
+    location: string
+  }
+
+  const addJob = async (newJob: Job): Promise<void> => {
     const res = await fetch('/api/jobs', {
       method: 'POST',
       headers: {
